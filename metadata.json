@@ -1,0 +1,7 @@
+{
+  "name": "خطة المحاضرات والمذاكرة والواجبات",
+  "description": "دفتر تخطيط ومتابعة المحاضرات والمذاكرة والواجبات للطباعة A4 بأسلوب Neo-brutalist أبيض وأسود",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

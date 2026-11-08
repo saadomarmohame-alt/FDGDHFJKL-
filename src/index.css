@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    color: #111111;
+    background-color: #f4f4f5;
+  }
+}
+
+/* Custom Typography */
+.font-display {
+  font-family: 'Changa', 'Cairo', sans-serif;
+}
+.font-heading {
+  font-family: 'Lemonada', 'Changa', sans-serif;
+}
+.font-body {
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Neo-Brutalist Solid Shadows */
+.shadow-neo-xs {
+  box-shadow: 1.5px 1.5px 0px #000;
+}
+.shadow-neo-sm {
+  box-shadow: 2.5px 2.5px 0px #000;
+}
+.shadow-neo {
+  box-shadow: 4px 4px 0px #000;
+}
+.shadow-neo-md {
+  box-shadow: 5px 5px 0px #000;
+}
+.shadow-neo-lg {
+  box-shadow: 7px 7px 0px #000;
+}
+
+/* Subject Distinct Black & White Patterns */
+/* 1. Subtle Notebook Dot Grid */
+.pattern-notebook {
+  background-image: radial-gradient(#a1a1aa 1.2px, transparent 1.2px);
+  background-size: 18px 18px;
+}
+
+/* 2. English: Diagonal Stripes (خطوط مائلة) */
+.pattern-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #ffffff,
+    #ffffff 7px,
+    #e4e4e7 7px,
+    #e4e4e7 14px
+  );
+}
+
+.pattern-stripes-dark {
+  background: repeating-linear-gradient(
+    -45deg,
+    #18181b,
+    #18181b 6px,
+    #27272a 6px,
+    #27272a 12px
+  );
+}
+
+/* 3. Arabic: Dots Pattern (نقط) */
+.pattern-dots {
+  background-image: radial-gradient(#52525b 2px, transparent 2px);
+  background-size: 12px 12px;
+  background-color: #fafafa;
+}
+
+/* 4. History: Grid Pattern (شبكة) */
+.pattern-grid {
+  background-size: 16px 16px;
+  background-image: 
+    linear-gradient(to right, #d4d4d8 1px, transparent 1px),
+    linear-gradient(to bottom, #d4d4d8 1px, transparent 1px);
+  background-color: #fafafa;
+}
+
+/* 5. Programming: Checkerboard (مربعات) */
+.pattern-checker {
+  background-image: 
+    linear-gradient(45deg, #e4e4e7 25%, transparent 25%), 
+    linear-gradient(-45deg, #e4e4e7 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #e4e4e7 75%), 
+    linear-gradient(-45deg, transparent 75%, #e4e4e7 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  background-color: #ffffff;
+}
+
+/* Underline Highlighter Effect */
+.highlight-line {
+  position: relative;
+  display: inline-block;
+}
+.highlight-line::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background-color: #e4e4e7;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+/* A4 Printable Page Container */
+.a4-page {
+  width: 210mm;
+  min-height: 297mm;
+  max-width: 210mm;
+  padding: 10mm 12mm;
+  margin: 0 auto 24px auto;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Print Specific Rules */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 8mm 8mm 10mm 8mm;
+  }
+  
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .a4-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 2mm 0 4mm 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+  }
+
+  .a4-page:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  .page-break-always {
+    page-break-before: always !important;
+    break-before: page !important;
+  }
+
+  .avoid-break {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
